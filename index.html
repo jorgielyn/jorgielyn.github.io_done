@@ -1,0 +1,74 @@
+<html>
+
+<head>
+  <title>MQTT</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="jumbotron text-center" style="background-color: skyblue">
+    <h1>MQTT</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSloHloMKLIisaK9ngAQl_xbggU4LLVBp5frNNrOTwDnhv5cZSS">
+  </div>
+
+  <!-- Icons Grid -->
+  <section class="features-icons bg-light ">
+    <div class="container text-center" style="background-color:paleturquoise;">
+      <div class="row">
+
+        <div class="col-lg-4" style="border:darkgreen;">
+          <h1>Broker</h1>
+          Address: <input id="broker" type="text" value="ws://broker.hivemq.com:8000/mqtt"><br><br>
+          <input id="connect" class="btn btn-primary" type="button" value="Connect">
+          <input id="disconnect" class="btn btn-primary" type="button" value="Disconnect" disabled><br><br>
+          Status: <input id="status" class="btn btn-default" type="button" value="Loading.........."
+            disabled><br><br>
+          
+        </div>
+
+        <div class="col-lg-4" style="padding-top: 150px;">
+          <h1>Publish</h1>
+          Topic: <input id="pubTopic" type="text"><br><br>
+          Payload: <input id="pubPayload" type="text"><br><br>
+          <input id="btnPublish" class="btn btn-primary" type="button" value="Publish">
+        
+       
+        </div>
+        
+
+        <div class="col-lg-4">
+          <h1>Subscribe</h1>
+          Topic: <input id="subTopic" type="text"><br><br>
+          <input id="btnSubscribe" class="btn btn-primary" type="button" value="Subscribe">
+          <input id="btnUnsubscribe" class="btn btn-primary" type="button" value="Unsubscribe" disabled>
+          
+        </div>
+
+      </div>
+      <br><br>
+      <table id="receiver" class="table  table-hover ">
+        <thead class="thead-light">
+          <th>Topic</th>
+          <th>Payload</th>
+          <th>Time Stamp</th>
+        </thead>
+        <tbody id="msg">
+
+        </tbody>
+      </table>
+      <div class="row">
+
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <script src="scripts/browserMqtt.js"></script>
+  <script src="scripts/controller.js"></script>
+
+</body>
+
+
+</html>
